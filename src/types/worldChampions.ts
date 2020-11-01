@@ -1,13 +1,39 @@
 interface Driver {
+    driverId: string;
+    permanentNumber: string;
+    code: string;
+    url: string;
     givenName: string;
     familyName: string;
-    code: string;
+    dateOfBirth: string;
     nationality: string;
 }
-interface DriverStandings{
-    Driver : Driver
+
+interface Constructor {
+    constructorId: string;
+    url: string;
+    name: string;
+    nationality: string;
 }
-export interface WorldChampion{
+
+interface DriverStanding {
+    position: string;
+    positionText: string;
+    points: string;
+    wins: string;
+    Driver: Driver;
+    Constructors: Constructor[];
+}
+
+interface StandingsList {
     season: string;
-    DriverStandings: Array<DriverStandings>;
+    round: string;
+    DriverStandings: DriverStanding[];
 }
+
+export interface RootObject {
+    StandingsLists: StandingsList[];
+}
+
+
+

@@ -21,7 +21,7 @@ const Home: React.FC<{}> = () => {
         <Container>
             <Row>
             {service.status === 'loaded' &&
-            service.payload.map((champion) => {
+            service.payload.StandingsLists.map((champion) => {
                 return (
                         <Col xs={6} md={4}>
                             <ListItem data={champion} />

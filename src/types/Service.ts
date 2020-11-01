@@ -6,9 +6,9 @@ interface ServiceInit {
     status: 'loading';
   }
   
-  interface ServiceLoaded {
+  interface ServiceLoaded<T> {
     status: 'loaded';
-    payload: [];
+    payload: T;
   }
   
   interface ServiceError {
@@ -16,9 +16,9 @@ interface ServiceInit {
     error: Error;
   }
   
-  export type Service =
+  export type Service<T> =
     | ServiceInit
     | ServiceLoading
-    | ServiceLoaded
+    | ServiceLoaded<T>
     | ServiceError;
   
